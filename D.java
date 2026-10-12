@@ -54,7 +54,10 @@ public class D extends BackgroundPanel {
 
         add(content, BorderLayout.CENTER);
 
-        submitButton.addActionListener(e -> checkAnswer());
+        submitButton.addActionListener(e -> {
+            SoundPlayer.playClick();
+            checkAnswer();
+        });
         answerField.addActionListener(e -> checkAnswer());
     }
 
@@ -72,6 +75,7 @@ public class D extends BackgroundPanel {
         );
 
         setImage("d/a.jpg");
+        SoundPlayer.playBackground();
     }
 
     private void checkAnswer() {

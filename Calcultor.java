@@ -63,6 +63,8 @@ public class Calcultor {
                 button.setOpaque(true);
 
                 button.addActionListener(e -> {
+                    SoundPlayer.playClick();
+
                     String current = display.getText();
 
                     if (text.equals("C")) {
