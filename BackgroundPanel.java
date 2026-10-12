@@ -7,14 +7,25 @@ public class BackgroundPanel extends JPanel {
     private Image image;
 
     public BackgroundPanel(String path) {
-        image = new ImageIcon(path).getImage();
         setLayout(new BorderLayout());
-        setOpaque(false);
+        setBackground(Color.BLACK);
+        setOpaque(true);
+
+        if (path != null) {
+            image = new ImageIcon(path).getImage();
+        }
+    }
+
+    public void setImage(String path) {
+        image = new ImageIcon(path).getImage();
+        repaint();
     }
 
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+        if (image != null) {
+            g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
+        }
     }
 }

@@ -1,11 +1,27 @@
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.*;
-import javax.imageio.ImageIO;
-import java.io.File;
-
 
 public class Calcultor {
+
+    private static void shuffleButtons(JPanel panel) {
+        Component[] components = panel.getComponents();
+
+        java.util.List<Component> shuffled =
+            new java.util.ArrayList<>();
+
+        java.util.Collections.addAll(shuffled, components);
+        java.util.Collections.shuffle(shuffled);
+
+        panel.removeAll();
+
+        for (Component component : shuffled) {
+            panel.add(component);
+        }
+
+        panel.revalidate();
+        panel.repaint();
+    }
 
     public static void main(String[] args) {
 
@@ -13,8 +29,7 @@ public class Calcultor {
         frame.setSize(400, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setLayout(new BorderLayout(10, 10));
-        frame.getContentPane().setBackground(Color.BLACK);
+        BackgroundPanel background = new BackgroundPanel(null);
 
         JTextField display = new JTextField("0");
         display.setEditable(false);
@@ -25,12 +40,12 @@ public class Calcultor {
         display.setForeground(Color.WHITE);
         display.setBorder(BorderFactory.createEmptyBorder(15, 10, 15, 10));
 
-        
+
 
         JPanel panel = new JPanel(new GridLayout(4, 4, 8, 8));
         panel.setOpaque(false);
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        panel.setOpaque(false);
+
 
         String[] buttons = {
             "7", "8", "9", "/",
@@ -42,6 +57,10 @@ public class Calcultor {
         final double[] firstNumber = {0};
         final String[] operator = {""};
         final boolean[] newNumber = {true};
+        final boolean[] hasJumbled = {false};
+
+        D horrorPanel = new D();
+        horrorPanel.setVisible(false);
 
         for (String text : buttons) {
             JButton button = new JButton(text);
@@ -50,10 +69,8 @@ public class Calcultor {
             button.setForeground(Color.WHITE);
 
             button.setBackground(Color.DARK_GRAY);
-            button.setForeground(Color.WHITE);
-            button.setFocusPainted(false);
             button.setBorderPainted(false);
-            button.setOpaque(false); 
+            button.setOpaque(true);
 
             button.addActionListener(e -> {
                 String current = display.getText();
@@ -66,7 +83,7 @@ public class Calcultor {
                 }
                 else if (text.equals("=")) {
                     double secondNumber = Double.parseDouble(current);
-                    double result = 0;
+                    double result = secondNumber;
 
                     switch (operator[0]) {
                         case "+":
@@ -79,6 +96,12 @@ public class Calcultor {
                             result = firstNumber[0] * secondNumber;
                             break;
                         case "/":
+                            if (secondNumber == 0) {
+                                display.setText(
+                                    "Cannot divide by zero"
+                                );
+                                return;
+                            }
                             result = firstNumber[0] / secondNumber;
                             break;
                     }
@@ -86,6 +109,15 @@ public class Calcultor {
                     display.setText(String.valueOf(result));
                     operator[0] = "";
                     newNumber[0] = true;
+                    horrorPanel.setVisible(true);
+                    background.setImage("a.jpg");
+                    if (!hasJumbled[0]) {
+                        shuffleButtons(panel);
+                        hasJumbled[0] = true;
+                    }
+
+                    background.revalidate();
+                    background.repaint();
                 }
                 else if (text.equals("+") || text.equals("-")
                         || text.equals("*") || text.equals("/")) {
@@ -105,12 +137,11 @@ public class Calcultor {
 
             panel.add(button);
         }
-        
-        BackgroundPanel background =
-                new BackgroundPanel("a.jpg");
 
-        background.add(display, BorderLayout.NORTH);
-        background.add(panel, BorderLayout.CENTER);
+
+        background.add(horrorPanel, BorderLayout.NORTH);
+        background.add(display, BorderLayout.CENTER);
+        background.add(panel, BorderLayout.SOUTH);
 
         frame.setContentPane(background);
         frame.setVisible(true);
