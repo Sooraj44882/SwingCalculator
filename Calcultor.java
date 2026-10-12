@@ -1,10 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.*;
+import javax.imageio.ImageIO;
+import java.io.File;
+
 
 public class Calcultor {
+
     public static void main(String[] args) {
 
-        JFrame frame = new JFrame("Calculator");
+        JFrame frame = new JFrame("D     C     a       l         c");
         frame.setSize(400, 500);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -15,16 +20,17 @@ public class Calcultor {
         display.setEditable(false);
         display.setHorizontalAlignment(JTextField.RIGHT);
         display.setFont(new Font("Arial", Font.BOLD, 32));
-        display.setBackground(Color.BLACK);
+
+        display.setOpaque(false); 
         display.setForeground(Color.WHITE);
-        display.setCaretColor(Color.WHITE);
         display.setBorder(BorderFactory.createEmptyBorder(15, 10, 15, 10));
 
-        frame.add(display, BorderLayout.NORTH);
+        
 
         JPanel panel = new JPanel(new GridLayout(4, 4, 8, 8));
-        panel.setBackground(Color.BLACK);
+        panel.setOpaque(false);
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        panel.setOpaque(false);
 
         String[] buttons = {
             "7", "8", "9", "/",
@@ -47,7 +53,7 @@ public class Calcultor {
             button.setForeground(Color.WHITE);
             button.setFocusPainted(false);
             button.setBorderPainted(false);
-            button.setOpaque(true);
+            button.setOpaque(false); 
 
             button.addActionListener(e -> {
                 String current = display.getText();
@@ -99,8 +105,15 @@ public class Calcultor {
 
             panel.add(button);
         }
+        
+        BackgroundPanel background =
+                new BackgroundPanel("a.jpg");
 
-        frame.add(panel, BorderLayout.CENTER);
+        background.add(display, BorderLayout.NORTH);
+        background.add(panel, BorderLayout.CENTER);
+
+        frame.setContentPane(background);
         frame.setVisible(true);
+
     }
 }
