@@ -2,6 +2,8 @@ Journal
 
 hi everyone 
 
+please go downward for app video demo (incase if there is  any problem for reviwer to open the app .can check how my app work)
+
 
 1. create a basic window and add input 
 ![alt text](./asset/image.png)
@@ -31,3 +33,38 @@ b-adobe
 c-Photo by Robert Zunikoff on Unsplash
 e-vedio by Mounir Marley  on pexels
 h,click-Panto Man on pixabay
+
+<
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
+* here 
+
+https://drive.google.com/drive/folders/1wVgVQqPMnV1laPUwwzoxF1pa5vk0iOtQ?usp=sharing
