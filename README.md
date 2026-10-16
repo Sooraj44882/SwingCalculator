@@ -6,7 +6,20 @@
 Dcalc is a Java Swing desktop application .with some scary things,  Perform a calculation and discover what happens next.
 DDddddddddddddddddddddddd
 
- 
+## Download
+for windows 
+
+1. Download SwingCalculator.zip. 
+https://drive.google.com/drive/folders/1wVgVQqPMnV1laPUwwzoxF1pa5vk0iOtQ?usp=drive_link
+
+bcz in realse it saying only limit upto 25mb .
+
+2. unzip / extract the archive.
+3. They double-click SwingCalculator.exe to run the app immediately.
+
+
+
+
 ## Features
 
 All Basic feature available in Calculator add, sub, multiply and divide.
@@ -18,9 +31,13 @@ In horror added image sound effects video and audio . i can not show you the all
 
 * Scary Things 
 
-![alt text](<Screenshot 2026-10-16 182535-2.png>) ![alt text](<Screenshot 2026-10-16 182545-1.png>)
+![alt text](<Screenshot 2026-10-16 182535-1.png>)
+
+
+ ![alt text](<Screenshot 2026-10-16 182545-1.png>)
 
 ![alt text](<Screenshot 2026-10-16 182550.png>)
+
 ![alt text](<Screenshot 2026-10-16 182600.png>)
 
 
