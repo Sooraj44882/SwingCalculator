@@ -13,6 +13,7 @@ https://drive.google.com/drive/folders/1wVgVQqPMnV1laPUwwzoxF1pa5vk0iOtQ?usp=dri
 
 2. unzip / extract the archive.
 3. They double-click SwingCalculator.exe to run the app immediately.
+or you can run double clicking .jar also
 
 
 
