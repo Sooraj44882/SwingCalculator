@@ -1,6 +1,5 @@
 # Dcalc    
 
-
 **calculator, until you press =**
 
 Dcalc is a Java Swing desktop application .with some scary things,  Perform a calculation and discover what happens next.
@@ -9,10 +8,8 @@ DDddddddddddddddddddddddd
 ## Download
 for windows 
 
-1. Download SwingCalculator.zip. 
+1. Download zip from relases page or from the drive link (it has demo vedio also)
 https://drive.google.com/drive/folders/1wVgVQqPMnV1laPUwwzoxF1pa5vk0iOtQ?usp=drive_link
-
-bcz in realse it saying only limit upto 25mb .
 
 2. unzip / extract the archive.
 3. They double-click SwingCalculator.exe to run the app immediately.
