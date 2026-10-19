@@ -5,15 +5,39 @@
 Dcalc is a Java Swing desktop application .with some scary things,  Perform a calculation and discover what happens next.
 DDddddddddddddddddddddddd
 
-## Download
+## How to Download and run 
 for windows 
 
-1. Download zip from relases page or from the drive link (it has demo vedio also)
-https://drive.google.com/drive/folders/1wVgVQqPMnV1laPUwwzoxF1pa5vk0iOtQ?usp=drive_link
 
-2. unzip / extract the archive.
+so the simpleset way without any java download requirement is exe version .
+
+
+
+1. Download zip from relases page the exe which i mention in the realses page.
+
+2. unzip / extract the zip.
+
 3. They double-click SwingCalculator.exe to run the app immediately.
-or you can run double clicking .jar also
+
+note- sometime it can ask this permision so click more info and click run anyaway .
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+ Now there is one more way to run but i prefer exe one .so this one is jar version 
+
+
+ so i have 
+java version "24.0.2" 2025-07-15
+Java(TM) SE Runtime Environment (build 24.0.2+12-54)
+Java HotSpot(TM) 64-Bit Server VM (build 24.0.2+12-54, mixed mode, sharing)
+
+1. first download the zip from the realses page the one without exe.
+2. extract the zip 
+3. double click .jar file .it will run 
+
+
 
 
 
@@ -69,3 +93,7 @@ e-vedio by Mounir Marley  on pexels
 h,click-Panto Man on pixabay
 
 here a,b,c,e,click are file name .
+
+
+ ( demo vedio)
+https://drive.google.com/drive/folders/1wVgVQqPMnV1laPUwwzoxF1pa5vk0iOtQ?usp=drive_link
